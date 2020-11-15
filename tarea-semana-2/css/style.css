@@ -1,0 +1,117 @@
+*{
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 120%;
+	margin: 0;
+	padding: 0;
+  	background-color: #ffecd9;
+
+}
+
+h1{
+	text-align: center;
+	font-size: 195%;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+
+p{
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+
+}
+
+.section{
+  	margin-right: 1em;
+  	margin-left: 1em;
+  	margin-top: 30px;
+  	background-color: white;
+  	border: 1px solid black;
+  	position: relative;
+}
+
+
+.descripcion{
+	margin-top: 40px;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	bottom: 0px;
+	
+	
+}
+.titulo{
+	border: 1px solid black;
+	border-top: 0px;
+	border-right: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	width: 150px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 145%;
+	position: absolute;
+	top:0;
+	right: 0;
+}
+
+#sec1{
+	background-color: #fc9d9a;
+}
+#sec2{
+	background-color: #fe4365;	
+}
+
+#sec3{
+	background-color: #c997c6;
+
+}
+
+
+/* Simple Responsive Framework. */
+.row {
+  width: 100%;
+}
+
+/********** Large devices only **********/
+@media (min-width: 992px) {
+   .col-lg-4 {
+    float: left;
+	border: 0px;
+  }
+
+   .col-lg-4 {
+    width: 33.33%;
+  }
+}
+
+
+/********** Medium devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+ .col-md-6, .col-md-12 {
+    float: left;
+	border: 0px;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-12 {
+  	width: 100%;
+   /* width: 87.75%;*/
+  }
+}
+ 
+/********** Minimum devices only **********/
+@media (max-width: 767px) {
+.col-mx-12 {
+    float: left;
+	border: 0px;
+  }
+ .col-lx-12 {
+    width: 100%;
+  }
+}
