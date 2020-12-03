@@ -67,8 +67,6 @@ const setTarea = e => {
     pintarTareas()
 }
 
-
-
 const pintarTareas = () => {
 
     localStorage.setItem('tareas', JSON.stringify(tareas))
@@ -85,12 +83,12 @@ const pintarTareas = () => {
 
         listaTareaDoing.innerHTML = `
         <div class="alert alert-dark text-center">
-        Sin tareas pendientes 😍
+        No estas haciendo ninguna tarea actualmente 😍
         </div>
         `
         listaTareaDone.innerHTML = `
         <div class="alert alert-dark text-center">
-        Sin tareas pendientes 😍
+        No has terminado ninguna tarea actualmente 😍
         </div>
         `
         return
@@ -108,16 +106,23 @@ const pintarTareas = () => {
 
         if (tarea.activo === true && tarea.estado === 1) {
 
-            clone.querySelector('.alert').classList.replace('alert-warning', 'alert-primary')
+            clone.querySelector('.alert').classList.replace('alert-danger', 'alert-primary')
             // clone.querySelectorAll('.fas')[0].classList.remove('fa-check-circle', 'fa-undo-alt')
             // clone.querySelector('p').style.textDecoration = 'line-through'
             console.log("lfrangment2: " + fragment2.childNodes.length)
 
             if (fragment2.childNodes.length === (limiteHaciendo)) {
-
-                alert("hay mas de 5 tareas, termine las tareas que esta haciendo antes");
+                listaTareaDoing.innerHTML = `
+                <div class="alert alert-success text-center">
+                hay mas de 5 tareas, termine las tareas que esta haciendo antes 😍
+                </div>
+                `
+                // alert("hay mas de 5 tareas, termine las tareas que esta haciendo antes");
+             
                 tarea.estado = 1
                 tarea.activo = false
+
+
             }
             else {
                 tarea.estado = 2
@@ -126,7 +131,7 @@ const pintarTareas = () => {
         } else
             if (tarea.activo === true && tarea.estado === 2) {
 
-                clone.querySelector('.alert').classList.replace('alert-warning', 'alert-primary')
+                clone.querySelector('.alert').classList.replace('alert-danger', 'alert-primary')
                 // clone.querySelectorAll('.fas')[0].classList.remove('fa-check-circle', 'fa-undo-alt')
                 // clone.querySelector('p').style.textDecoration = 'line-through'
 
@@ -137,7 +142,7 @@ const pintarTareas = () => {
 
                 if (tarea.activo === true && tarea.estado === 3) {
 
-                    clone.querySelector('.alert').classList.replace('alert-warning', 'alert-primary')
+                    clone.querySelector('.alert').classList.replace('alert-danger', 'alert-primary')
                     clone.querySelectorAll('.fas')[0].classList.remove('fa-check-circle', 'fa-undo-alt')
                     clone.querySelector('p').style.textDecoration = 'line-through'
 
@@ -186,7 +191,6 @@ const btnAccion = e => {
         pintarTareas()
 
     }
-
   
     e.stopPropagation()
 }
